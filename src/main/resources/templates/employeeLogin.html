@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Login</title>
+
+<!-- Futuristic Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="employeeLoginStyle.css">
+</head>
+<body>
+<a href="javascript:history.back()" class="back-btn">Back</a>
+
+    <div class="login-container">
+        <h2>🚀 Employee Login</h2>
+
+        <div th:if="${successMsg}">
+            <h3 class="success-msg" th:text="${successMsg}"></h3>
+        </div>
+
+        <div th:if="${errorMsg}">
+            <h3 class="error-msg" th:text="${errorMsg}"></h3>
+        </div>
+
+        <form th:object="${employee}" th:action="@{/employeeLogin}" method="post">
+            <div class="form-group">
+                <label for="employeeId">Employee ID:</label>
+                <input type="text" id="employeeId" th:field="*{employeeId}" placeholder="Enter your Employee ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" th:field="*{password}" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>

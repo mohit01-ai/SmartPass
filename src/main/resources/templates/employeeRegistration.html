@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Registration</title>
+<link rel="stylesheet" href="employeeLoginStyle.css">
+</head>
+<body>
+
+	<div class="login-container">
+		<h2>Employee Registration</h2>
+
+		<div th:if="${successMsg}">
+			<h3 style="color: green" th:text="${successMsg}"></h3>
+		</div>
+
+		<div th:if="${errorMsg}">
+			<h3 style="color: red" th:text="${errorMsg}"></h3>
+		</div>
+
+		<form th:object="${employee}" th:action="@{/employeeRegistration}" method="post">
+			
+			<div class="form-group">
+				<label for="name">Employee Name:</label>
+				<input type="text" th:field="*{name}" placeholder="Enter your Name" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="employeeId">Employee ID:</label>
+				<input type="text" id="employeeId" th:field="*{employeeId}" placeholder="Enter your Employee ID" required>
+			</div>
+
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" th:field="*{password}" placeholder="Enter your password" required>
+			</div>
+
+			<button type="submit" class="login-btn">Submit</button>
+		</form>
+
+		<button onclick="goBack()" class="back-btn">Go Back</button>
+	</div>
+
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+
+</body>
+</html>

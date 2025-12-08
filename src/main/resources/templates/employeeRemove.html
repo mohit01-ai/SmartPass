@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Deletion</title>
+<link rel="stylesheet" href="employeeLoginStyle.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Employee Deletion</h2>
+
+        <div th:if="${successMsg}">
+            <h3 style="color: green" th:text="${successMsg}"></h3>
+        </div>
+
+        <div th:if="${errorMsg}">
+            <h3 style="color: red" th:text="${errorMsg}"></h3>
+        </div>
+
+        <div class="delete-container">
+            <div class="single-delete">
+                <h3>Delete Single Employee</h3>
+                <form th:object="${employee}" th:action="@{/employeeRemove}" method="post">
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID:</label>
+                        <input type="text" id="employeeId" th:field="*{employeeId}" placeholder="Enter Employee ID" required>
+                    </div>
+                    <button type="submit" class="login-btn"
+                        onclick="return confirm('Are you sure you want to delete this employee?');">
+                        Delete Employee
+                    </button>
+                </form>
+            </div>
+
+            <div class="all-delete">
+                <h3 style="color: red;">Delete All Employees</h3>
+                <form th:object="${admin}" th:action="@{/employeeRemoveAll}" method="post">
+                <input type="hidden" th:field="*{email}" th:value="${admin.email}">
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password:</label>
+                        <input type="password" id="password" th:field="*{password}" placeholder="Enter Admin Password" required>
+                    </div>
+                    <button type="submit" class="login-btn"
+                        onclick="return confirm('Are you sure you want to remove ALL employee gate pass entries?');">
+                        Delete All Employees
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <button onclick="goBack()" class="back-btn" style="margin-top: 20px;">Go Back</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

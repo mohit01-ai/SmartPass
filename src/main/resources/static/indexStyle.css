@@ -1,0 +1,167 @@
+/* Futuristic HUD Background */
+body {
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 20% 20%, #05010f, #000622, #000000);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Rotating Planet */
+.planet {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00faff 20%, #001020 70%);
+  box-shadow: 0 0 60px #00faff, inset 0 0 40px #00faff;
+  animation: spin 20s linear infinite;
+  top: 15%;
+  left: 10%;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Moving Scanlines */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,255,0.05) 0px,
+    rgba(0,255,255,0.05) 2px,
+    transparent 3px
+  );
+  animation: scan 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes scan {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10%); }
+}
+
+/* Floating Container */
+.container {
+  text-align: center;
+  background: rgba(0, 15, 40, 0.4);
+  padding: 60px 80px;
+  border-radius: 20px;
+  border: 1px solid #00eaff;
+  box-shadow: 0 0 40px #00eaff, inset 0 0 20px #00eaff33;
+  backdrop-filter: blur(12px);
+  animation: float 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Title */
+h1 {
+  color: #00faff;
+  font-size: 42px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #00faff, 0 0 40px #00faff;
+}
+
+/* Static HUD Line */
+.hud-line {
+  width: 100px;
+  height: 2px;
+  margin: 0 auto 25px auto;
+  background: linear-gradient(90deg, transparent, #00faff, transparent);
+  box-shadow: 0 0 12px #00faff;
+}
+
+/* Subtext */
+p {
+  color: #a8caff;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Neon Buttons with Ripple */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #00faff;
+  background: transparent;
+  border: 2px solid #00faff;
+  border-radius: 10px;
+  text-shadow: 0 0 12px #00faff;
+  box-shadow: 0 0 20px #00faff;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #00faff44, transparent 70%);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: transform 0.4s ease-out;
+}
+.btn:hover::after {
+  transform: scale(2);
+}
+.btn:hover {
+  background: #00faff;
+  color: #001020;
+  box-shadow: 0 0 40px #00faff;
+  transform: scale(1.1);
+}
+
+/* Admin Button - Magenta Glow */
+.admin-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-color: #ff00ff;
+  color: #ff99ff;
+  text-shadow: 0 0 12px #ff00ff;
+  box-shadow: 0 0 25px #ff00ff;
+}
+.admin-btn:hover {
+  background: #ff00ff;
+  color: #fff;
+  transform: scale(1.15);
+  box-shadow: 0 0 40px #ff00ff;
+}
+
+/* HUD Rings */
+.hud-ring {
+  position: absolute;
+  border: 2px dashed #00faff55;
+  border-radius: 50%;
+  animation: rotateRing 20s linear infinite;
+}
+.ring1 { width: 400px; height: 400px; }
+.ring2 { width: 600px; height: 600px; animation-duration: 30s; }
+.ring3 { width: 800px; height: 800px; animation-duration: 40s; }
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

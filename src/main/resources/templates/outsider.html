@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outsider Gate Pass</title>
+<link rel="stylesheet" href="outsiderStyle.css">
+</head>
+<body>
+
+	<button onclick="goBack()" class="back-btn">← Go Back</button>
+
+	<div class="form-container">
+
+		<div th:if="${successMsg}">
+			<h3 class="success-msg" th:text="${successMsg}"></h3>
+		</div>
+
+		<div th:if="${errorMsg}">
+			<h3 class="error-msg" th:text="${errorMsg}"></h3>
+		</div>
+
+		<h2>Outsider Gate Pass Form</h2>
+
+		<form th:object="${outsider}" th:action="@{/outsiderLogin}"
+			method="post">
+			<div class="form-group">
+				<label for="name">Full Name:</label> <input type="text" id="name"
+					th:field="*{name}" placeholder="Enter your full name" required>
+			</div>
+
+			<div class="form-group">
+				<label for="mobileNo">Mobile Number:</label> <input type="text"
+					id="mobileNo" th:field="*{mobileNo}"
+					placeholder="Enter your mobile number" required>
+			</div>
+
+			<div class="form-group">
+				<label for="code">Secret Code:</label> <input type="text" id="code"
+					th:field="*{code}" placeholder="Enter the secret code" required>
+			</div>
+			<div class="form-group">
+				<label for="purpose">Purpose of Visit:</label>
+				<textarea id="purpose" th:field="*{purpose}"
+					placeholder="Enter your purpose of visit" rows="3"></textarea>
+			</div>
+
+
+			<button type="submit" class="submit-btn">Submit</button>
+		</form>
+	</div>
+
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+
+</body>
+</html>

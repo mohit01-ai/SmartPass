@@ -1,0 +1,131 @@
+/* Body Layout */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom right, #0a0f1c, #1f2937, #111827);
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Panels */
+.panel {
+  flex: 1;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.panel:hover {
+  transform: translateY(-5px);
+}
+
+/* Panel Titles */
+.panel h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00faff;
+}
+
+/* Panel Text */
+.panel p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  text-decoration: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+  color: #ffffff;
+  background: linear-gradient(to right, #00faff, #2563eb);
+  box-shadow: 0 0 15px #00faff88;
+  transition: 0.3s ease;
+  width: 80%;
+  text-align: center;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00faff;
+}
+
+/* Remove Buttons */
+.remove-btn {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  box-shadow: 0 0 15px #ef444488;
+}
+.remove-btn:hover {
+  box-shadow: 0 0 25px #ef4444;
+}
+
+/* Add Panel Accent */
+.add-panel {
+  border-left: 6px solid #00faff;
+}
+
+/* Remove Panel Accent */
+.remove-panel {
+  border-left: 6px solid #ef4444;
+}
+
+/* Back Button Container */
+.back-container {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Full-width Back Button */
+.back-btn {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 16px;
+  color: #00faff;
+  background: transparent;
+  border: 2px solid #00faff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #00faff88;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.back-btn:hover {
+  background: #00faff;
+  color: #001020;
+  box-shadow: 0 0 20px #00faff;
+  transform: scale(1.02);
+}

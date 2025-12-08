@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outsider Pass Deletion</title>
+<link rel="stylesheet" href="outsiderStyle.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Outsider Pass Removal</h2>
+
+        <!-- Success Message -->
+        <div th:if="${successMsg}" class="success-msg">
+            <h3 th:text="${successMsg}"></h3>
+        </div>
+
+        <!-- Error Message -->
+        <div th:if="${errorMsg}" class="error-msg">
+            <h3 th:text="${errorMsg}"></h3>
+        </div>
+
+        <div class="delete-container">
+
+            <!-- Single Delete -->
+            <div class="single-delete">
+                <h3>Remove Single Pass</h3>
+
+                <form th:object="${outsider}" th:action="@{/outsiderRemove}" method="post">
+                    <div class="form-group">
+                        <label for="mobileNo">Mobile Number:</label>
+                        <input type="text" id="mobileNo" th:field="*{mobileNo}" placeholder="Enter Mobile Number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="code">Secret Code:</label>
+                        <input type="text" id="code" th:field="*{code}" placeholder="Enter Secret Code" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn"
+                        onclick="return confirm('Are you sure you want to delete this outsider pass?');">
+                        Delete Pass
+                    </button>
+                </form>
+            </div>
+
+            <!-- Delete All -->
+            <div class="all-delete">
+                <h3 style="color: red;">Delete All Outsider Passes</h3>
+
+                <form th:object="${admin}" th:action="@{/outsidersRemoveAll}" method="post">
+                    <input type="hidden" th:field="*{email}" th:value="${admin.email}">
+
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password:</label>
+                        <input type="password" id="adminPassword" th:field="*{password}" placeholder="Enter Admin Password" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn"
+                        onclick="return confirm('Are you sure you want to delete ALL outsider passes?');">
+                        Delete All Passes
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <button onclick="goBack()" class="back-btn">Go Back</button>
+
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

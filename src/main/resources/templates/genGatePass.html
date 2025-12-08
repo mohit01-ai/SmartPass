@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Gate Pass</title>
+<link rel="stylesheet" href="gatePassStyle.css">
+</head>
+<body>
+
+<div class="gate-pass">
+    <h2>Employee Gate Pass</h2>
+
+    <div class="details">
+        <p><strong>Name:</strong> <span th:text="${name}"></span></p>
+        <p><strong>Date:</strong> <span th:text="${date}"></span></p>
+        <p><strong>Time:</strong> <span th:text="${time}"></span></p>
+        <p><strong>Gate Pass ID:</strong> <span th:text="${gatePassId}"></span></p>
+    </div>
+
+    <button class="download-btn" onclick="window.print()">Print / Download</button>
+
+    <div class="footer">
+        <p>Issued by: Security Department</p>
+    </div>
+</div>
+
+</body>
+</html>

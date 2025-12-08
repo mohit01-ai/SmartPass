@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gate Pass Control</title>
+  <link rel="stylesheet" href="add_removeStyle.css" />
+</head>
+<body>
+
+  <div class="dashboard">
+    <!-- Add Panel -->
+    <div class="panel add-panel">
+      <h2>🟢 Gate Pass Add</h2>
+      <p>Select who needs a gate pass:</p>
+      <div class="button-group">
+        <a href="/openEmpRegistrationPage" class="btn">👨‍💼 Employee</a>
+        <a href="/openOutRegistrationPage" class="btn">🧑‍💼 Visitor</a>
+      </div>
+    </div>
+
+    <!-- Remove Panel -->
+    <div class="panel remove-panel">
+      <h2>🔴 Gate Pass Remove</h2>
+      <p>Select whose gate pass to remove:</p>
+      <div class="button-group">
+        <a href="/openEmpRemovePage" class="btn remove-btn">❌ Employee</a>
+        <a href="/openOutRemovePage" class="btn remove-btn">❌ Visitor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back Button Below Panels -->
+  <div class="back-container">
+    <button onclick="history.back()" class="btn back-btn">← Go Back</button>
+  </div>
+
+</body>
+</html>
