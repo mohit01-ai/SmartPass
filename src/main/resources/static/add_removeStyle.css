@@ -1,4 +1,3 @@
-/* Body Layout */
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
@@ -11,7 +10,6 @@ body {
   padding: 40px 20px;
 }
 
-/* Dashboard Layout */
 .dashboard {
   display: flex;
   gap: 40px;
@@ -22,7 +20,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Panels */
 .panel {
   flex: 1;
   padding: 40px;
@@ -40,14 +37,12 @@ body {
   transform: translateY(-5px);
 }
 
-/* Panel Titles */
 .panel h2 {
   font-size: 24px;
   margin-bottom: 15px;
   text-shadow: 0 0 10px #00faff;
 }
 
-/* Panel Text */
 .panel p {
   font-size: 16px;
   margin-bottom: 30px;
@@ -55,7 +50,6 @@ body {
   text-align: center;
 }
 
-/* Button Group */
 .button-group {
   display: flex;
   flex-direction: column;
@@ -64,7 +58,6 @@ body {
   align-items: center;
 }
 
-/* Buttons */
 .btn {
   text-decoration: none;
   padding: 14px 28px;
@@ -82,7 +75,6 @@ body {
   box-shadow: 0 0 25px #00faff;
 }
 
-/* Remove Buttons */
 .remove-btn {
   background: linear-gradient(to right, #ef4444, #dc2626);
   box-shadow: 0 0 15px #ef444488;
@@ -91,17 +83,14 @@ body {
   box-shadow: 0 0 25px #ef4444;
 }
 
-/* Add Panel Accent */
 .add-panel {
   border-left: 6px solid #00faff;
 }
 
-/* Remove Panel Accent */
 .remove-panel {
   border-left: 6px solid #ef4444;
 }
 
-/* Back Button Container */
 .back-container {
   margin-top: 40px;
   width: 100%;
@@ -109,7 +98,6 @@ body {
   padding: 0 20px;
 }
 
-/* Full-width Back Button */
 .back-btn {
   width: 100%;
   padding: 14px 0;

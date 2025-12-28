@@ -1,38 +1,133 @@
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
 }
 
-.gate-pass {
-    background: #ffffff;
-    width: 420px;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    text-align: center;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
-.gate-pass::before {
-    content: '';
+body::before {
+    content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 12px;
-    border: 2px dashed #2563eb;
-    pointer-events: none;
+    inset: 0;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none; 
 }
 
-h2 { color: #2563eb; margin-bottom: 15px; }
-.details { text-align: left; margin-top: 20px; color: #374151; }
-.details p { margin: 8px 0; font-size: 15px; }
-.footer { margin-top: 30px; font-size: 13px; color: #6b7280; }
-.download-btn { margin-top: 20px; padding: 10px 15px; background-color: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; transition: 0.3s; }
-.download-btn:hover { background-color: #1e40af; }
+.gate-pass {
+    position: relative;
+    z-index: 1;
+    width: 380px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+.gate-pass h2 {
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.divider {
+    height: 2px;
+    background: #e5e7eb;
+    margin: 15px 0;
+}
+
+.details {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.details span {
+    color: #475569;
+}
+
+.details strong {
+    color: #0f172a;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.back-btn,
+.cancel-btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.back-btn {
+    background: #64748b;
+    color: #fff;
+}
+
+.back-btn:hover {
+    background: #475569;
+}
+
+.cancel-btn {
+    background: #dc2626;
+    color: #fff;
+}
+
+.cancel-btn:hover {
+    background: #b91c1c;
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #475569;
+}
+
+@media print {
+    .download-btn,
+    .action-buttons {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+}

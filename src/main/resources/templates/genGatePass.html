@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employee Gate Pass</title>
-<link rel="stylesheet" href="gatePassStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Gate Pass</title>
+
+    <link rel="stylesheet" href="gatePassStyle.css">
 </head>
+
 <body>
 
 <div class="gate-pass">
+
     <h2>Employee Gate Pass</h2>
 
+    <div class="divider"></div>
+
     <div class="details">
-        <p><strong>Name:</strong> <span th:text="${name}"></span></p>
-        <p><strong>Date:</strong> <span th:text="${date}"></span></p>
-        <p><strong>Time:</strong> <span th:text="${time}"></span></p>
-        <p><strong>Gate Pass ID:</strong> <span th:text="${gatePassId}"></span></p>
+        <!-- <p>
+            <span>Name</span>
+            <strong th:text="${name}">Employee Name</strong>
+        </p> -->
+        <p>
+            <span>Date</span>
+            <strong th:text="${date}">2025-12-28</strong>
+        </p>
+        <p>
+            <span>Time</span>
+            <strong th:text="${time}">10:30 AM</strong>
+        </p>
+        <p>
+            <span>Gate Pass ID</span>
+            <strong th:text="${gatePassId}">GP-0001</strong>
+        </p>
     </div>
 
-    <button class="download-btn" onclick="window.print()">Print / Download</button>
+    <button type="button" class="download-btn" onclick="window.print()">
+        Print / Download
+    </button>
+
+    <div class="action-buttons">
+        <button type="button" class="back-btn" onclick="window.history.back()">
+            Back
+        </button>
+
+        <button type="button" class="cancel-btn"
+                onclick="window.location.href='/'">
+            Cancel
+        </button>
+    </div>
 
     <div class="footer">
-        <p>Issued by: Security Department</p>
+        <p>Issued by <strong>Security Department</strong></p>
     </div>
+
 </div>
 
 </body>

@@ -11,19 +11,16 @@
     <div class="form-container">
         <h2>Outsider Pass Removal</h2>
 
-        <!-- Success Message -->
         <div th:if="${successMsg}" class="success-msg">
             <h3 th:text="${successMsg}"></h3>
         </div>
 
-        <!-- Error Message -->
         <div th:if="${errorMsg}" class="error-msg">
             <h3 th:text="${errorMsg}"></h3>
         </div>
 
         <div class="delete-container">
 
-            <!-- Single Delete -->
             <div class="single-delete">
                 <h3>Remove Single Pass</h3>
 
@@ -45,7 +42,6 @@
                 </form>
             </div>
 
-            <!-- Delete All -->
             <div class="all-delete">
                 <h3 style="color: red;">Delete All Outsider Passes</h3>
 

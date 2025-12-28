@@ -1,110 +1,133 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eef3ff;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    position: relative;
+    background: radial-gradient(circle at top, #020617, #000814);
+    overflow: hidden;
+    color: #e0f2fe;
 }
 
-/* Main Box */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, #ff0080, #ff4fd8);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255, 0, 200, 0.8);
+    z-index: 2;
+}
+
+.back-btn:hover {
+    opacity: 0.9;
+}
+
 .form-container {
-    background: white;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
     width: 420px;
-    text-align: center;
+    padding: 35px;
+    border-radius: 18px;
+    background: rgba(2, 8, 23, 0.9);
+    box-shadow:
+        0 0 30px rgba(0, 200, 255, 0.7),
+        inset 0 0 15px rgba(0, 200, 255, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.4);
 }
 
-/* Messages */
+h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #38bdf8;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+}
+
 .success-msg {
-    color: green;
+    text-align: center;
+    color: #22c55e;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
 .error-msg {
-    color: red;
+    text-align: center;
+    color: #f87171;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #0f172a;
-}
-
-/* Form Groups */
 .form-group {
-    margin-bottom: 15px;
-    text-align: left;
+    margin-bottom: 18px;
 }
 
 label {
-    font-weight: 600;
-    margin-bottom: 5px;
     display: block;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #d1d5db;
-    border-radius: 5px;
     font-size: 14px;
+    margin-bottom: 6px;
+    color: #7dd3fc;
 }
 
+input,
 textarea {
-    resize: none;
-}
-
-/* Delete Boxes */
-.single-delete, .all-delete {
-    background: #f8fafc;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #e2e8f0;
-}
-
-.single-delete h3 {
-    color: #1e3a8a;
-}
-
-.all-delete h3 {
-    color: #b91c1c;
-}
-
-/* Buttons */
-.submit-btn {
     width: 100%;
     padding: 10px;
-    background-color: #2563eb;
-    color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.6);
+    background: rgba(2, 6, 23, 0.8);
+    color: #e0f2fe;
+    font-size: 14px;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
     border: none;
-    border-radius: 6px;
+    border-radius: 14px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
+    background: linear-gradient(90deg, #00f5ff, #0ea5e9);
+    color: #020617;
+    font-weight: bold;
+    box-shadow: 0 0 18px rgba(0, 245, 255, 0.9);
 }
 
 .submit-btn:hover {
-    background-color: #1e40af;
+    opacity: 0.9;
 }
 
-.back-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #e5e7eb;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.back-btn:hover {
-    background-color: #d1d5db;
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+        padding: 25px;
+    }
 }
